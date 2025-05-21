@@ -1,7 +1,7 @@
 ---
 substitutions:
   # Dashes are not supported in devicename
-  devicename: "higrowplantsensor"
+  devicename: "higrowplantsensorpump"
   device_description: "Keep my plants safe and lively"
   project_version: "1.2"
   update_interval: 1min
@@ -12,9 +12,9 @@ substitutions:
   conductivity_max: "0.286"
   # Uncomment run_duration and sleep_duration if you want to use deepsleep
   # set how long to stay awake - NOT less then 10sec
-  # run_duration: 11s
+  # run_duration: 15s
   # set how long to sleep in minutes
-  # sleep_duration: 60min
+  # sleep_duration: 15min
 
 esphome:
   name: "${devicename}"
@@ -40,7 +40,7 @@ esphome:
       - switch.turn_off: spower
 
 dashboard_import:
-  package_import_url: github://wooboo/LILYGO-T-Higrow-Esphome/LILYGO-T-Higrow-ESP32.yaml@main
+  package_import_url: github://wooboo/LILYGO-T-Higrow-Esphome/LILYGO-T-Higrow-ESP32-waterpump.yaml@main
 
 esp32:
   board: lolin_d32
@@ -109,7 +109,7 @@ packages:
   text_sensors: !include common/text_sensors.yaml
   dht: !include common/dht.yaml
   plantsensors: !include common/plantsensors.yaml
-  # waterpump: !include common/waterpump.yaml
+  waterpump: !include common/waterpump.yaml
   # bluetooth: !include common/bluetooth.yaml
   # Battery only works for 12 hours with deepsleep!
   # bme280: !include common/bme280.yaml
