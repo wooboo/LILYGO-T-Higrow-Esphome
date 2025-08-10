@@ -12,9 +12,9 @@ substitutions:
   conductivity_max: "0.286"
   # Uncomment run_duration and sleep_duration if you want to use deepsleep
   # set how long to stay awake - NOT less then 10sec
-  # run_duration: 15s
+  run_duration: 30s
   # set how long to sleep in minutes
-  # sleep_duration: 15min
+  sleep_duration: 240min
 
 esphome:
   name: "${devicename}"
@@ -113,5 +113,5 @@ packages:
   # bluetooth: !include common/bluetooth.yaml
   # Battery only works for 12 hours with deepsleep!
   # bme280: !include common/bme280.yaml
-  # deepsleep: !include common/deepsleep.yaml
-  # battery: !include common/battery.yaml
+  deepsleep: !include common/deepsleep.yaml
+  battery: !include common/battery.yaml
