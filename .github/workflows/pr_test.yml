@@ -1,7 +1,9 @@
 ---
 name: Test PR
 
-on: [pull_request] # yamllint disable-line rule:truthy
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
@@ -19,6 +21,6 @@ jobs:
         with:
           config_file: .github/yamllint.yml
       - name: Build ESPHome firmware to verify configuration
-        uses: esphome/build-action@v3.3.0
+        uses: esphome/build-action@v7.0.0
         with:
-          yaml_file: ${{ matrix.file }}
+          yaml-file: ${{ matrix.file }}

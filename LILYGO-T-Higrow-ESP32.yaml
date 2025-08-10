@@ -3,8 +3,8 @@ substitutions:
   # Dashes are not supported in devicename
   devicename: "higrowplantsensor"
   device_description: "Keep my plants safe and lively"
-  project_version: "1.2"
-  update_interval: 1min
+  project_version: "1.1"
+  update_interval: 30min # Set this to e.g. 1min when calibrating
   loglevel: DEBUG
   moisture_min: "2.896"
   moisture_max: "1.448"
@@ -44,6 +44,8 @@ dashboard_import:
 
 esp32:
   board: lolin_d32
+  framework:
+       type: esp-idf
 
 improv_serial:
 
@@ -90,9 +92,7 @@ switch:
   # Power Switch
   - platform: gpio
     name: "${devicename} Sensor Power switch"
-    pin:
-      number: 4
-      mode: INPUT_PULLUP
+    pin: 4
     id: spower
     restore_mode: ALWAYS_ON
     internal: true
