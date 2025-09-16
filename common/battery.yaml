@@ -36,5 +36,5 @@ sensor:
       - calibrate_linear:
           # Map 0.0 (from sensor) to 0.0 (true value)
           - 3.18 -> 0.0
-          - 4.20 -> 100.0
+          - 3.77 -> 100.0
     update_interval: ${update_interval}
